@@ -4,9 +4,10 @@ var handleAPI = require('../utils/util.js').handleControllerAPI;
 exports.controller = function(app) {
 	app.get('/test', function(req, resp) {
 		handleAPI(req, resp, function(req, resp) {
+			var msg = req.query.msg;
 			resp.json({
 				ok: true,
-				msg: 'test api'
+				respMsg: msg + ' from server'
 			});
 		});
 	});
