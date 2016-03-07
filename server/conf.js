@@ -13,9 +13,9 @@ module.exports = {
 			colorize: false,
 			timestamp: true,
 			prettyPrint: true,
-			filename: 'manage-todo.log',
+			filename: 'app.log',
 			maxsize: 5242880,
 			maxFiles: 5
 		}
 	}
-};
+}
