@@ -1,28 +1,27 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var QS = require('query-string');
-var util = require('./utils/util.js');
-var server = require('./utils/server.js');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import QS from 'query-string'
+import request from 'superagent'
+import util from './utils/util.js'
+import server from './utils/server.js'
 require('./reset.css');
 
-var request = require('superagent');
-
-util.init();
+util.init()
 
 function getDOM() {
-	var pathname = window.location.pathname;
-	var params = QS.parse(location.search);
+	var pathname = window.location.pathname
+	var params = QS.parse(location.search)
 
 	try {
 		if(pathname === '/') {
-			return (<div>index</div>);
+			return (<div>index</div>)
 		}
 	} catch(err) {
-		//TODO
+		console.error(err)
 	}
 }
 
 ReactDOM.render(
 	getDOM(),
 	document.getElementById('container')
-);
+)
